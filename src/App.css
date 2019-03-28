@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .App-logo {
@@ -12,16 +13,23 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
 }
+
+.textArea{
+  min-width: 800px;
+  min-height: 300px;
+}
+
+
+.largeInput{
+  min-width: 400px;
+}
+
 
 @keyframes App-logo-spin {
   from {
