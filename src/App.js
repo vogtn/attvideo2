@@ -100,8 +100,8 @@ class App extends Component {
     longString = longString + '\n\t<body>'
     longString = longString + '\n\t\t<div>'
     longString = longString + '\n' + textboxC
-    longString = longString + '\t\t<div>'
-    longString = longString + '\n\t<body>'
+    longString = longString + '\t\t</div>'
+    longString = longString + '\n\t</body>'
     longString = longString + '\n</tt>'
     longString = longString + '\n]]></field>'
     longString = longString + '\n\t\t<field name="videoMeta_en"><![CDATA[<div gvp="'+this.state.videoid+ '"><script type="application/ld+json">{"@context" : "http://schema.org","@type" : "VideoObject","name" : "","description" : "'+this.state.videodescription+'","thumbnailUrl" : "https://gvpcertvideos.att.com/att-videos/'+this.state.year+'/'+this.state.admin+'/'+this.state.admin+'_110x62.jpg","uploadDate" : "'+this.state.launchdate+'","duration" : "'+this.state.length+'","contentUrl" : "https://gvpcertvideos.att.com/att-videos/'+this.state.year+'/'+this.state.admin+'/'+this.state.admin+'.mp4"}</script><video src="https://gvpcertvideos.att.com/att-videos/'+this.state.year+'/'+this.state.admin+'/'+this.state.admin+'.mp4"></video></div>]]></field>'
