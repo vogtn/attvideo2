@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/attvideo2/precache-manifest.0b84b7bbd70fe760adf5f737e862ad6c.js"
+  "/attvideo2/precache-manifest.ff0f3aee3454943852a5c7615ca377da.js"
 );
 
 workbox.clientsClaim();
