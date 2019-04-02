@@ -163,6 +163,37 @@ class App extends Component {
       $("#modalText").val(data);
     }
   }
+  uploadDocument3 = () => {
+    $(".borderP").hide();
+    this.setState({
+      conversion: true
+    })
+    var srtData = document.getElementById("fileChooser3").files[0]
+    var srt;
+    var reader = new FileReader();
+    reader.readAsText(srtData);
+    reader.onloadend = function(){
+      var srtData = $(reader);
+        if(srtData[0].result){
+          var jsonSubs = srtData[0].result;
+          parseData(jsonSubs);
+        }
+    }
+    function parseData(jsonSubs){
+      let data = "";
+      let lineCount = 1;
+      jsonSubs = jsonSubs.split(/\n/);
+      for(var i=0; i< jsonSubs.length; i++){
+        if(jsonSubs[i].search("^[0-9]")){
+          if(jsonSubs[i].length !== 0){
+            data = data + jsonSubs[i] + "\n";
+          }
+        }
+      }
+      let modalText = document.getElementById("modalText");
+      $("#modalText").val(data);
+    }
+  }
 
   uploadDocument = () => {
     var srtData = document.getElementById("fileChooser").files[0]
@@ -202,13 +233,7 @@ class App extends Component {
     
   }
 
-  // uploadDocument(){
-  //   alert('uploaded xml');
-  //   const xml = document.getElementById('fileChooser').files[0];
 
-  //   const result = XmlReader.parseSync(xml/*, options*/);
-  //   console.log(result);
-  // }
 
   render() {
     return (
@@ -221,9 +246,22 @@ class App extends Component {
         <label htmlFor="fileChooser2">
             <Button variant="contained" component="span" className="button">
             <ClosedCaptionIcon className="rightIcon" />
-              Convert Caption
+              Convert Caption (add numbers to each line)
             </Button>
           </label> 
+        <input id="fileChooser3" type="file" onChange={this.uploadDocument3} style={{ display: 'none' }} >
+        </input>
+        <br />
+        <br />
+        <br />
+        <label htmlFor="fileChooser3">
+            <Button variant="contained" component="span" className="button">
+            <ClosedCaptionIcon className="rightIcon" />
+              Convert Caption (For youtube)
+            </Button>
+          </label> 
+          <br />
+        <br />
       <div className="App">
         <header>
           <h3>Upload Caption First: </h3>
